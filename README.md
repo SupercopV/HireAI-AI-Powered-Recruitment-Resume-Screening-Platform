@@ -31,6 +31,7 @@ The platform provides dedicated, role-isolated portals for **Recruiters** and **
 
 3. **High-Throughput Bulk Resume Ingestion (Up to 500 CVs)**:
    - Supports **PDF** (PyMuPDF) and **DOCX** (`python-docx`).
+   - Supports **Excel (.xlsx)** and **CSV (.csv)** bulk spreadsheet ingestion with downloadable templates.
    - Automated **OCR fallback** with Tesseract for scanned image PDFs.
    - Instant **duplicate detection** using SHA-256 file hashing combined with normalized contact info (email and phone).
 
@@ -91,8 +92,8 @@ The platform provides dedicated, role-isolated portals for **Recruiters** and **
 ### 3. Local Setup
 ```bash
 # Clone the repository
-git clone https://github.com/hireai-enterprise/hireai.git
-cd hireai
+git clone https://github.com/SupercopV/HireAI-AI-Powered-Recruitment-Resume-Screening-Platform.git
+cd HireAI-AI-Powered-Recruitment-Resume-Screening-Platform
 
 # Backend Setup
 python -m venv venv
