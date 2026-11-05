@@ -339,3 +339,4 @@ When moving HireAI from local evaluation to a hosted cloud production environmen
 2. **Enforce SSL/TLS**: Ensure `DATABASE_URL` includes `?sslmode=require` when connecting to hosted databases.
 3. **Set CORS Origins**: Restrict `CORS_ORIGINS` strictly to your production domain (e.g. `https://your-hireai.vercel.app`).
 4. **Configure S3 Storage**: For enterprise-scale production, transition `UPLOAD_DIR` to an AWS S3 / Cloudflare R2 bucket with pre-signed upload URLs.
+
