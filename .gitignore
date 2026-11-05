@@ -39,6 +39,8 @@ uploads/
 *.pdf
 !sample_data/**
 !docs/**
+!Technical_Design_Document.pdf
+*.zip
 
 # Testing
 .pytest_cache/
