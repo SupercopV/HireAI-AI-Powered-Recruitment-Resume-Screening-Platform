@@ -123,28 +123,9 @@ docker-compose ps
 
 ## 5. Cloud Production Deployment
 
-### A. Database Deployment (Neon Serverless PostgreSQL Recommended)
-
-Neon ([neon.tech](https://neon.tech)) is an ideal cloud database provider for HireAI because of its generous free tier, automatic scale-to-zero when idle, and built-in connection pooling:
-
-1. **Sign up**: Go to [neon.tech](https://neon.tech) and create a free account (no credit card required).
-2. **Create a Project**: Click **New Project**, name it `hireai`, and select a region closest to your backend (e.g. `US East (Ohio)` or `Frankfurt`).
-3. **Copy Connection String**: From the Neon Dashboard, copy the connection string. Neon provides:
-   - **Pooled connection string** (recommended for production API):
-     `postgresql://<user>:<password>@<ep-xyz-pooler>.<region>.aws.neon.tech/hireai?sslmode=require`
-4. **Configure in HireAI**: Set this connection string in your backend `.env` or Render environment variables:
-   ```env
-   DATABASE_URL=postgresql://<user>:<password>@<ep-xyz-pooler>.<region>.aws.neon.tech/hireai?sslmode=require
-   ```
-5. **Run Migrations & Seed Data**:
-   ```bash
-   # Apply all 16 tables via Alembic
-   alembic upgrade head
-
-   # Seed initial demo accounts and requisitions
-   python backend/seed.py
-   ```
-   *(Note: HireAI's SQLAlchemy engine is already pre-configured with `pool_pre_ping=True` and Alembic uses `NullPool`, ensuring flawless reconnection when Neon auto-resumes from suspension).*
+### A. Database Deployment (Render / Supabase / Neon)
+1. Create a new **PostgreSQL instance** on Render, Supabase, or Neon.
+2. Copy the Internal or External Database URL (e.g. `postgresql://user:password@host:5432/hireai`).
 
 ### B. Backend Deployment on Render
 1. In Render Dashboard, click **New +** → **Web Service**.
